@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Visualizing Sorting Algorithms</title>
+
+    
+    <link href="static/css/style.css" rel="stylesheet"/>
+    <link href="static/css/vuetify.min.css" rel="stylesheet"/>
+    <link href="static/css/materialdesignicons.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet"> 
+
+</head>
+
+<body>
+    <div id="app">
+        <v-app id="content" dark>
+            <v-container fluid dark>
+                <header>
+                    <h1>Visualizing Sorting Algorithms</h1>
+                </header>
+
+            
+                <transition-group tag="div" name="list" class="histogram lines">
+                    <div is="histogram" v-for="(num, index) in array" v-bind:key="index" v-bind:num="num" v-bind:id="index" v-bind:style="[line,{height : num+'px'}]" v-bind:class="['list-item', index]"></div>
+                </transition-group>        
+            
+                <v-footer dark absolute>
+                    <v-btn text small v-on:click="shuffle()">Shuffle
+                        <v-icon dark right>mdi-shuffle-variant</v-icon>
+                    </v-btn>
+
+                    <v-divider class="mx-2" vertical></v-divider>
+                    
+                    <div class="selection">
+                        <v-select dark dense item-color="#AE394B" disable-lookup hide-details flat placeholder="Sorting Algorithms" :items="sortAlgorithms" item-text="name" v-model="selectedSortAlgorithm" v-on:change="sort()"></v-select>
+                        <div class="nextToSelect">
+                            <div v-if="selectedSortAlgorithm != ''">
+                                <v-btn icon text color="#AE394B" v-on:click="sort()">
+                                    <v-icon color="#AE394B" dense>mdi-play</v-icon>
+                                </v-btn>
+                            </div>
+                            <div v-if="selectedSortAlgorithm == ''">
+                                <v-btn icon text disabled color="#AE394B">
+                                    <v-icon color="#AE394B" dense>mdi-play</v-icon>
+                                </v-btn>
+                            </div>
+                        </div>
+                    </div>
+
+                    <v-divider class="mx-2" vertical></v-divider>
+                    
+                    <number-input inline controls v-model="newNoOfElements" v-on:change="genRandom()" size="small" :min=5 :value="10" :step="5" center></number-input>                    
+                </v-footer>
+            </v-container>
+        </v-app> 
+    </div>
+
+
+    <script src="static/js/vue.min.js"></script>
+    <script src="static/js/vuetify.min.js"></script>
+    
+    <script src="static/js/common.js"></script>
+    <script src="static/js/sorting.js"></script>
+    <script src="static/js/components/histogram.js"></script>
+    <script src="static/js/vue-number-input.min.js"></script>
+    <script src="static/js/app.js"></script>
+
+</body>
+
+</html>

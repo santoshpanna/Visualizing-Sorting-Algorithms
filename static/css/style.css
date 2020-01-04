@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+body, html {
+    height: 100%;
+    background-color: #1B141B;
+}
+
+.container {
+    padding: 0 !important;
+}
+
+#content {
+    background-color: transparent !important;
+}
+
+header {
+    color: white;
+    background: #363636;
+}
+
+header h1 {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 36px;
+    padding: 0.25em;
+}
+
+.histogram {
+    display: flex;
+    padding: 0 5em 0 5em;
+    justify-content: center;
+    bottom: 52px;
+    position: absolute;
+    width: 100%;
+}
+
+.lines {
+    flex-wrap: wrap-reverse;
+}
+
+.list-item {
+    transition: all ease 0.5s;
+}
+
+.list-enter-active, .list-leave-active {
+    transition: all 0.25s;
+}
+
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+    transition: all 0.2s;
+    opacity: 0;
+}
+
+.v-select__selections input { display: none}
+
+.v-select__slot, .v-input {
+    width: 185px !important;
+}
+
+.v-text-field {
+    margin: 0 !important;
+}
+
+.number-input__input {
+    background-color: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid white !important;
+}
+
+.number-input__button {
+    background-color: #AE394B !important;
+    border: none !important;
+}
+
+.number-input__button:hover::before, .number-input__button:hover::after{
+    background-color: #fff !important;
+}
+
+.number-input__button--minus {
+    border-radius: 0 !important;
+    left: 0 !important;
+}
+
+.number-input__button--plus {
+    border-radius: 0 !important;
+    right: 0 !important;
+}
+
+.v-select__selection {
+    margin: 0 !important;
+}
+
+.v-application {
+    color: #FFFFFF !important;
+    caret-color: #AE394B !important;
+}
+
+.selection {
+    display: inline-block;
+    width: 225px;
+}
+
+.nextToSelect {
+    left: 335px;
+    position: absolute;
+    bottom: 2px;
+}

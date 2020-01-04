@@ -1,10 +1,9 @@
-#Visualizng Sorting Algorithms
+# Visualizng Sorting Algorithms
 A simple webpage to visualize sorting algorithms using vue.js
 
 ![](https://raw.githubusercontent.com/santoshpanna/Visualizing-Sorting-Algorithms/master/images/home.png)
 
 #### Algorithms
-
 - Bubble Sort
 - Insertion Sort
 - Selection Sort
